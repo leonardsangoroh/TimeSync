@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B521F2822C7B46B40019C31B /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521F2812C7B46B40019C31B /* MainTableViewController.swift */; };
+		B521F2852C7B532A0019C31B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521F2842C7B532A0019C31B /* Contact.swift */; };
+		B521F2872C7BA9E90019C31B /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521F2862C7BA9E90019C31B /* ContactTableViewCell.swift */; };
 		B5425C3E2C77EC7F00C3A983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5425C3D2C77EC7F00C3A983 /* AppDelegate.swift */; };
 		B5425C402C77EC7F00C3A983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5425C3F2C77EC7F00C3A983 /* SceneDelegate.swift */; };
 		B5425C472C77EC8100C3A983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5425C462C77EC8100C3A983 /* Assets.xcassets */; };
 		B5425C4A2C77EC8100C3A983 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5425C492C77EC8100C3A983 /* Base */; };
 		B5425C522C77F7AE00C3A983 /* PersonalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5425C512C77F7AE00C3A983 /* PersonalProfileViewController.swift */; };
-		B5425C542C77FBA100C3A983 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5425C532C77FBA100C3A983 /* MainViewController.swift */; };
 		B58CEAEB2C795E2600A6B1F0 /* TSButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CEAEA2C795E2600A6B1F0 /* TSButtonRow.swift */; };
 		B5D634A62C7A276800BA2178 /* TSRowButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D634A52C7A276800BA2178 /* TSRowButtonItem.swift */; };
 		B5D634A82C7A6E1E00BA2178 /* TSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D634A72C7A6E1E00BA2178 /* TSButton.swift */; };
@@ -20,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B521F2812C7B46B40019C31B /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		B521F2842C7B532A0019C31B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		B521F2862C7BA9E90019C31B /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		B5425C3A2C77EC7F00C3A983 /* TimeSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5425C3D2C77EC7F00C3A983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5425C3F2C77EC7F00C3A983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +32,6 @@
 		B5425C492C77EC8100C3A983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5425C4B2C77EC8100C3A983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5425C512C77F7AE00C3A983 /* PersonalProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewController.swift; sourceTree = "<group>"; };
-		B5425C532C77FBA100C3A983 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B58CEAEA2C795E2600A6B1F0 /* TSButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSButtonRow.swift; sourceTree = "<group>"; };
 		B5D634A52C7A276800BA2178 /* TSRowButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSRowButtonItem.swift; sourceTree = "<group>"; };
 		B5D634A72C7A6E1E00BA2178 /* TSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSButton.swift; sourceTree = "<group>"; };
@@ -45,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B521F2832C7B52D10019C31B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B521F2842C7B532A0019C31B /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B5425C312C77EC7F00C3A983 = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +76,12 @@
 		B5425C3C2C77EC7F00C3A983 /* TimeSync */ = {
 			isa = PBXGroup;
 			children = (
+				B521F2832C7B52D10019C31B /* Model */,
+				B521F2812C7B46B40019C31B /* MainTableViewController.swift */,
 				B5425C3D2C77EC7F00C3A983 /* AppDelegate.swift */,
 				B5425C3F2C77EC7F00C3A983 /* SceneDelegate.swift */,
 				B5425C512C77F7AE00C3A983 /* PersonalProfileViewController.swift */,
-				B5425C532C77FBA100C3A983 /* MainViewController.swift */,
+				B521F2862C7BA9E90019C31B /* ContactTableViewCell.swift */,
 				B58CEAE72C79556100A6B1F0 /* CustomViews */,
 				B5425C462C77EC8100C3A983 /* Assets.xcassets */,
 				B5425C482C77EC8100C3A983 /* LaunchScreen.storyboard */,
@@ -157,12 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B521F2852C7B532A0019C31B /* Contact.swift in Sources */,
 				B5425C3E2C77EC7F00C3A983 /* AppDelegate.swift in Sources */,
 				B5D634A62C7A276800BA2178 /* TSRowButtonItem.swift in Sources */,
 				B5D634A82C7A6E1E00BA2178 /* TSButton.swift in Sources */,
 				B5425C522C77F7AE00C3A983 /* PersonalProfileViewController.swift in Sources */,
+				B521F2822C7B46B40019C31B /* MainTableViewController.swift in Sources */,
+				B521F2872C7BA9E90019C31B /* ContactTableViewCell.swift in Sources */,
 				B5425C402C77EC7F00C3A983 /* SceneDelegate.swift in Sources */,
-				B5425C542C77FBA100C3A983 /* MainViewController.swift in Sources */,
 				B58CEAEB2C795E2600A6B1F0 /* TSButtonRow.swift in Sources */,
 				B5D634AA2C7A798400BA2178 /* DetailViewController.swift in Sources */,
 			);
