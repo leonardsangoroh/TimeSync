@@ -49,8 +49,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func createHomeNC()-> UINavigationController {
-        let mainVC = MainViewController()
-        mainVC.title = "Home"
+        let mainVC = MainTableViewController()
+        mainVC.title = "My Contacts"
         mainVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
         
         return UINavigationController(rootViewController: mainVC)
