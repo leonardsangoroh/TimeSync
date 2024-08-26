@@ -76,17 +76,13 @@
 		B5425C3C2C77EC7F00C3A983 /* TimeSync */ = {
 			isa = PBXGroup;
 			children = (
-				B521F2832C7B52D10019C31B /* Model */,
-				B521F2812C7B46B40019C31B /* MainTableViewController.swift */,
 				B5425C3D2C77EC7F00C3A983 /* AppDelegate.swift */,
 				B5425C3F2C77EC7F00C3A983 /* SceneDelegate.swift */,
-				B5425C512C77F7AE00C3A983 /* PersonalProfileViewController.swift */,
-				B521F2862C7BA9E90019C31B /* ContactTableViewCell.swift */,
+				B521F2832C7B52D10019C31B /* Model */,
+				B5BCD3F62C7D227C006EA75E /* ViewControllers */,
 				B58CEAE72C79556100A6B1F0 /* CustomViews */,
-				B5425C462C77EC8100C3A983 /* Assets.xcassets */,
-				B5425C482C77EC8100C3A983 /* LaunchScreen.storyboard */,
+				B5BCD3F72C7D22C1006EA75E /* Resources */,
 				B5425C4B2C77EC8100C3A983 /* Info.plist */,
-				B5D634A92C7A798400BA2178 /* DetailViewController.swift */,
 			);
 			path = TimeSync;
 			sourceTree = "<group>";
@@ -94,11 +90,31 @@
 		B58CEAE72C79556100A6B1F0 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B521F2862C7BA9E90019C31B /* ContactTableViewCell.swift */,
 				B58CEAEA2C795E2600A6B1F0 /* TSButtonRow.swift */,
 				B5D634A52C7A276800BA2178 /* TSRowButtonItem.swift */,
 				B5D634A72C7A6E1E00BA2178 /* TSButton.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		B5BCD3F62C7D227C006EA75E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5D634A92C7A798400BA2178 /* DetailViewController.swift */,
+				B521F2812C7B46B40019C31B /* MainTableViewController.swift */,
+				B5425C512C77F7AE00C3A983 /* PersonalProfileViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B5BCD3F72C7D22C1006EA75E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5425C482C77EC8100C3A983 /* LaunchScreen.storyboard */,
+				B5425C462C77EC8100C3A983 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
