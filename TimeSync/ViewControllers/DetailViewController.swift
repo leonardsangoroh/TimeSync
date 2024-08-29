@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         profilePicture.clipsToBounds = true
         
         NSLayoutConstraint.activate([
-            profilePicture.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            profilePicture.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             profilePicture.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             profilePicture.heightAnchor.constraint(equalToConstant: 150),
             profilePicture.widthAnchor.constraint(equalToConstant: 150)
@@ -60,7 +60,6 @@ class DetailViewController: UIViewController {
     
     func configureUserName() {
         view.addSubview(userName)
-        userName.text = "Lee Leonard Sangoroh"
         userName.translatesAutoresizingMaskIntoConstraints = false
         userName.textColor = .label
         userName.textAlignment = .center
@@ -127,7 +126,6 @@ class DetailViewController: UIViewController {
     
     func configurePhoneNumber() {
         view.addSubview(phoneNumber)
-        phoneNumber.text = "    " + "+254-123-456-789"
         phoneNumber.translatesAutoresizingMaskIntoConstraints = false
         phoneNumber.textColor = .label
         phoneNumber.textAlignment = .natural
