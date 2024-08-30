@@ -14,8 +14,8 @@ class DetailViewController: UIViewController {
     let horizontalLine = UIView()
     let phoneNumberLabel = UILabel()
     let phoneNumber = UILabel()
-    let emailLabel = UILabel()
-    let email = UILabel()
+    let timeLabel = UILabel()
+    let time = UILabel()
     let rightTimeButton = TSButton(backgroundColor: .systemGreen, title: "Right Time?")
     let statusAdviceRow = TSButtonRow()
 
@@ -30,8 +30,8 @@ class DetailViewController: UIViewController {
         configureHorizontalLine()
         configurePhoneNumberLabel()
         configurePhoneNumber()
-        configureEmailLabel()
-        configureEmail()
+        configureTimeLabel()
+        configureTime()
         configureRightTimeButton()
 
     }
@@ -80,13 +80,75 @@ class DetailViewController: UIViewController {
         
         view.addSubview(statusAdviceRow)
         
+        let timeString = time.text!
+        
+        // Remove "hrs" from the time string
+        let cleanTimeString = timeString.replacingOccurrences(of: " hrs", with: "")
+        
+        // Create a DateFormatter to parse the time string
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        
+        // Convert the string to a Date object
+        guard let time = timeFormatter.date(from: cleanTimeString) else {
+            print("Invalid time format")
+            return
+        }
+        
+        // Extract the hour component
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: time)
+        
+        DispatchQueue.main.async { [self] in
+            if hour >= 8 && hour <= 9 {
+                statusAdviceRow.call.tintColor = .systemGreen
+                statusAdviceRow.text.tintColor = .systemRed
+                statusAdviceRow.mail.tintColor = .systemRed
+                statusAdviceRow.meet.tintColor = .systemGreen
+            } else if hour >= 10 && hour <= 11 {
+                statusAdviceRow.call.backgroundColor = .systemRed
+                statusAdviceRow.text.backgroundColor = .systemGreen
+                statusAdviceRow.mail.backgroundColor = .systemGreen
+                statusAdviceRow.meet.backgroundColor = .systemRed
+            } else if hour >= 12 {
+                statusAdviceRow.call.backgroundColor = .systemRed
+                statusAdviceRow.text.backgroundColor = .systemRed
+                statusAdviceRow.mail.backgroundColor = .systemGreen
+                statusAdviceRow.meet.backgroundColor = .systemGreen
+            } else if hour >= 13 && hour <= 15 {
+                statusAdviceRow.call.backgroundColor = .systemRed
+                statusAdviceRow.text.backgroundColor = .systemRed
+                statusAdviceRow.mail.backgroundColor = .systemRed
+                statusAdviceRow.meet.backgroundColor = .systemGreen
+            } else if hour >= 16 {
+                statusAdviceRow.call.backgroundColor = .systemRed
+                statusAdviceRow.text.backgroundColor = .systemGreen
+                statusAdviceRow.mail.backgroundColor = .systemGreen
+                statusAdviceRow.meet.backgroundColor = .systemGreen
+            } else if hour >= 17 && hour <= 19 {
+                statusAdviceRow.call.tintColor = .systemRed
+                statusAdviceRow.text.tintColor = .systemGreen
+                statusAdviceRow.mail.tintColor = .systemGreen
+                statusAdviceRow.meet.tintColor = .systemRed
+            } else {
+                statusAdviceRow.call.backgroundColor = .systemRed
+                statusAdviceRow.text.backgroundColor = .systemRed
+                statusAdviceRow.mail.backgroundColor = .systemGreen
+                statusAdviceRow.meet.backgroundColor = .systemRed
+            }
+        }
+
+
+        
         statusAdviceRow.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
             statusAdviceRow.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 15),
             statusAdviceRow.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             statusAdviceRow.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
         ])
+        
     }
     
     
@@ -145,38 +207,37 @@ class DetailViewController: UIViewController {
     }
     
     
-    func configureEmailLabel() {
-        view.addSubview(emailLabel)
-        emailLabel.text = "EMAIL ADDRESS"
-        emailLabel.translatesAutoresizingMaskIntoConstraints = false
-        emailLabel.textColor = .secondaryLabel
-        emailLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        emailLabel.font = UIFont.systemFont(ofSize: 15)
+    func configureTimeLabel() {
+        view.addSubview(timeLabel)
+        timeLabel.text = "CONTACT LOCAL TIME"
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        timeLabel.textColor = .secondaryLabel
+        timeLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        timeLabel.font = UIFont.systemFont(ofSize: 15)
         
         NSLayoutConstraint.activate([
-            emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            emailLabel.topAnchor.constraint(equalTo: phoneNumber.bottomAnchor, constant: 30)
+            timeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            timeLabel.topAnchor.constraint(equalTo: phoneNumber.bottomAnchor, constant: 30)
         ])
     }
     
     
-    func configureEmail() {
-        view.addSubview(email)
-        email.text = "    " + "leonardsangoroh@gmail.com"
-        email.translatesAutoresizingMaskIntoConstraints = false
-        email.textColor = .label
-        email.textAlignment = .natural
-        email.font = UIFont.preferredFont(forTextStyle: .body)
-        email.font = UIFont.systemFont(ofSize: 20)
-        email.backgroundColor = UIColor.secondarySystemFill
-        email.layer.cornerRadius = 15
-        email.layer.masksToBounds = true
+    func configureTime() {
+        view.addSubview(time)
+        time.translatesAutoresizingMaskIntoConstraints = false
+        time.textColor = .label
+        time.textAlignment = .natural
+        time.font = UIFont.preferredFont(forTextStyle: .body)
+        time.font = UIFont.systemFont(ofSize: 20)
+        time.backgroundColor = UIColor.secondarySystemFill
+        time.layer.cornerRadius = 15
+        time.layer.masksToBounds = true
         
         NSLayoutConstraint.activate([
-            email.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 5),
-            email.heightAnchor.constraint(equalToConstant: 60),
-            email.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            email.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+            time.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 5),
+            time.heightAnchor.constraint(equalToConstant: 60),
+            time.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            time.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
             
         ])
     }

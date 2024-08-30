@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol ContactTableViewCellDelegate: AnyObject {
+    func didFetchCurrentTime(_ time: String)
+}
+
 class ContactTableViewCell: UITableViewCell {
     
+    weak var delegate: ContactTableViewCellDelegate?
     var profilePhoto = UIImageView()
     var nameLabel = UILabel()
     var localTimeLabel = UILabel()
@@ -54,6 +59,8 @@ class ContactTableViewCell: UITableViewCell {
             
         // Get the current time in that country
         let currentTime = getCurrentTime(for: countryCode)
+        // Notify the delegate with the current time
+        delegate?.didFetchCurrentTime(currentTime)
         
         let isWithinWorkingHours: Bool = checkIfWithinWorkingHours(for: countryCode)
         
@@ -833,6 +840,57 @@ class ContactTableViewCell: UITableViewCell {
         
         return false
     }
+    
+    
+    func checkAppropriateCommunicationChannel(for countryCode: String) -> Bool {
+        let timeZoneIdentifiers = [
+            // Your time zone mapping...
+            "+254": "Africa/Nairobi",
+            "+1": "America/New_York",
+            "+7": "Asia/Novosibirsk",
+            "+20": "Africa/Cairo",
+            "+27": "Africa/Johannesburg",
+            "+30": "Europe/Athens",
+            // Add more mappings as needed...
+        ]
+
+        guard let timeZoneIdentifier = timeZoneIdentifiers[countryCode],
+              let timeZone = TimeZone(identifier: timeZoneIdentifier) else {
+            return false
+        }
+
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let currentTime = calendar.dateComponents(in: timeZone, from: currentDate)
+
+        if let hour = currentTime.hour {
+            switch hour {
+            case 6..<9:
+                // 6 AM - 9 AM: Early morning (e.g., email, schedule meetings)
+                return true
+            case 9..<12:
+                // 9 AM - 12 PM: Morning work hours (e.g., call, text, email, meetings)
+                return true
+            case 12..<15:
+                // 12 PM - 3 PM: Early afternoon (e.g., call, text, email, meetings)
+                return true
+            case 15..<18:
+                // 3 PM - 6 PM: Late afternoon (e.g., text, email, meetings)
+                return true
+            case 18..<21:
+                // 6 PM - 9 PM: Early evening (e.g., text, email)
+                return true
+            case 21..<24, 0..<6:
+                // 9 PM - 6 AM: Night time (e.g., email, schedule meetings)
+                return false
+            default:
+                return false
+            }
+        }
+
+        return false
+    }
+
     
     
 }

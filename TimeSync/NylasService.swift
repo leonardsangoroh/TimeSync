@@ -12,8 +12,8 @@ class NylasService {
     //creates singleton instance of NylasService ensuring only one of its instance is used throughout the app
     static let shared = NylasService()
     
-    private let apiKey = ""
-    private static let grantID = ""
+    private let apiKey = "nyk_v0_uwBDKf5oGvxYiuMbwU4Nv9szBFBhTpSx64RSfUalOcabAEjbt2HwMMxzedQvcbuM"
+    private static let grantID = "1100d579-b94a-408b-94b7-ec53085d46c3"
     private let baseUrl = "https://api.us.nylas.com/v3/grants/\(grantID)/contacts"
     
     //prevents creation of instances outside the singleton pattern

@@ -1,8 +1,9 @@
 import UIKit
 
-class MainTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController,  ContactTableViewCellDelegate {
     
     var contacts: [Contact] = []
+    var contactLocalTime: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath) as! ContactTableViewCell
+        cell.delegate = self
         let contact = contacts[indexPath.row]
         cell.set(contact: contact)
         return cell
@@ -28,9 +30,11 @@ class MainTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let vc = DetailViewController()
         vc.userName.text = contacts[indexPath.row].givenName
         vc.phoneNumber.text = "    " + "\(contacts[indexPath.row].phoneNumbers.first!.number)"
+        vc.time.text = "    " + contactLocalTime + " hrs"
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -55,5 +59,10 @@ class MainTableViewController: UITableViewController {
                 }
             }
         }
+    }
+    
+    
+    func didFetchCurrentTime(_ time: String) {
+        contactLocalTime = time
     }
 }
