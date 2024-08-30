@@ -24,13 +24,13 @@ class TSRowButtonItem: UIView {
         // Configure the image view
         imageView.image = image
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .systemGreen // You can change the tint color here
+        //imageView.tintColor = .systemGreen // You can change the tint color here
         
         // Configure the label
         titleLabel.text = title
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 12) // Adjust font size as needed
-        titleLabel.textColor = .systemGreen // You can change the text color here
+        //titleLabel.textColor = .systemGreen // You can change the text color here
         
         // Add subviews
         addSubview(imageView)
