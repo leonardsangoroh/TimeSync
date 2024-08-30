@@ -106,25 +106,25 @@ class DetailViewController: UIViewController {
                 statusAdviceRow.mail.tintColor = .systemRed
                 statusAdviceRow.meet.tintColor = .systemGreen
             } else if hour >= 10 && hour <= 11 {
-                statusAdviceRow.call.backgroundColor = .systemRed
-                statusAdviceRow.text.backgroundColor = .systemGreen
-                statusAdviceRow.mail.backgroundColor = .systemGreen
-                statusAdviceRow.meet.backgroundColor = .systemRed
+                statusAdviceRow.call.tintColor = .systemRed
+                statusAdviceRow.text.tintColor = .systemGreen
+                statusAdviceRow.mail.tintColor = .systemGreen
+                statusAdviceRow.meet.tintColor = .systemRed
             } else if hour >= 12 {
-                statusAdviceRow.call.backgroundColor = .systemRed
-                statusAdviceRow.text.backgroundColor = .systemRed
-                statusAdviceRow.mail.backgroundColor = .systemGreen
-                statusAdviceRow.meet.backgroundColor = .systemGreen
+                statusAdviceRow.call.tintColor = .systemRed
+                statusAdviceRow.text.tintColor = .systemRed
+                statusAdviceRow.mail.tintColor = .systemGreen
+                statusAdviceRow.meet.tintColor = .systemGreen
             } else if hour >= 13 && hour <= 15 {
-                statusAdviceRow.call.backgroundColor = .systemRed
-                statusAdviceRow.text.backgroundColor = .systemRed
-                statusAdviceRow.mail.backgroundColor = .systemRed
-                statusAdviceRow.meet.backgroundColor = .systemGreen
+                statusAdviceRow.call.tintColor = .systemRed
+                statusAdviceRow.text.tintColor = .systemRed
+                statusAdviceRow.mail.tintColor = .systemRed
+                statusAdviceRow.meet.tintColor = .systemGreen
             } else if hour >= 16 {
-                statusAdviceRow.call.backgroundColor = .systemRed
-                statusAdviceRow.text.backgroundColor = .systemGreen
-                statusAdviceRow.mail.backgroundColor = .systemGreen
-                statusAdviceRow.meet.backgroundColor = .systemGreen
+                statusAdviceRow.call.tintColor = .systemRed
+                statusAdviceRow.text.tintColor = .systemGreen
+                statusAdviceRow.mail.tintColor = .systemGreen
+                statusAdviceRow.meet.tintColor = .systemGreen
             } else if hour >= 17 && hour <= 19 {
                 statusAdviceRow.call.tintColor = .systemRed
                 statusAdviceRow.text.tintColor = .systemGreen
