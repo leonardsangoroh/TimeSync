@@ -17,6 +17,9 @@
 		B5425C4A2C77EC8100C3A983 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5425C492C77EC8100C3A983 /* Base */; };
 		B5425C522C77F7AE00C3A983 /* PersonalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5425C512C77F7AE00C3A983 /* PersonalProfileViewController.swift */; };
 		B58CEAEB2C795E2600A6B1F0 /* TSButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CEAEA2C795E2600A6B1F0 /* TSButtonRow.swift */; };
+		B5A7E6762C847DBA00069F95 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = B5A7E6752C847DBA00069F95 /* GoogleGenerativeAI */; };
+		B5A7E6782C84811000069F95 /* GeminiAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7E6772C84811000069F95 /* GeminiAPIKey.swift */; };
+		B5A7E67A2C84820600069F95 /* LLMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7E6792C84820600069F95 /* LLMViewController.swift */; };
 		B5B212202C7F5B9A00D04D9D /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B2121F2C7F5B9A00D04D9D /* Contacts.swift */; };
 		B5BCD3FA2C7D2895006EA75E /* NylasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BCD3F92C7D2895006EA75E /* NylasService.swift */; };
 		B5D634A62C7A276800BA2178 /* TSRowButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D634A52C7A276800BA2178 /* TSRowButtonItem.swift */; };
@@ -37,6 +40,8 @@
 		B5425C4B2C77EC8100C3A983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5425C512C77F7AE00C3A983 /* PersonalProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewController.swift; sourceTree = "<group>"; };
 		B58CEAEA2C795E2600A6B1F0 /* TSButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSButtonRow.swift; sourceTree = "<group>"; };
+		B5A7E6772C84811000069F95 /* GeminiAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiAPIKey.swift; sourceTree = "<group>"; };
+		B5A7E6792C84820600069F95 /* LLMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMViewController.swift; sourceTree = "<group>"; };
 		B5B2121F2C7F5B9A00D04D9D /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		B5BCD3F92C7D2895006EA75E /* NylasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NylasService.swift; path = TimeSync/NylasService.swift; sourceTree = SOURCE_ROOT; };
 		B5D634A52C7A276800BA2178 /* TSRowButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSRowButtonItem.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A7E6762C847DBA00069F95 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +98,7 @@
 				B5425C4B2C77EC8100C3A983 /* Info.plist */,
 				B526CA082C80903900B60503 /* DebugKeys.plist */,
 				B5BCD3F82C7D2393006EA75E /* Services */,
+				B5A7E6772C84811000069F95 /* GeminiAPIKey.swift */,
 			);
 			path = TimeSync;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 				B5D634A92C7A798400BA2178 /* DetailViewController.swift */,
 				B521F2812C7B46B40019C31B /* MainTableViewController.swift */,
 				B5425C512C77F7AE00C3A983 /* PersonalProfileViewController.swift */,
+				B5A7E6792C84820600069F95 /* LLMViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,6 +158,9 @@
 			dependencies = (
 			);
 			name = TimeSync;
+			packageProductDependencies = (
+				B5A7E6752C847DBA00069F95 /* GoogleGenerativeAI */,
+			);
 			productName = TimeSync;
 			productReference = B5425C3A2C77EC7F00C3A983 /* TimeSync.app */;
 			productType = "com.apple.product-type.application";
@@ -178,6 +189,9 @@
 				Base,
 			);
 			mainGroup = B5425C312C77EC7F00C3A983;
+			packageReferences = (
+				B5A7E6742C847DBA00069F95 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			productRefGroup = B5425C3B2C77EC7F00C3A983 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,12 +220,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B521F2852C7B532A0019C31B /* Contact.swift in Sources */,
+				B5A7E6782C84811000069F95 /* GeminiAPIKey.swift in Sources */,
 				B5BCD3FA2C7D2895006EA75E /* NylasService.swift in Sources */,
 				B5425C3E2C77EC7F00C3A983 /* AppDelegate.swift in Sources */,
 				B5D634A62C7A276800BA2178 /* TSRowButtonItem.swift in Sources */,
 				B5D634A82C7A6E1E00BA2178 /* TSButton.swift in Sources */,
 				B5425C522C77F7AE00C3A983 /* PersonalProfileViewController.swift in Sources */,
 				B521F2822C7B46B40019C31B /* MainTableViewController.swift in Sources */,
+				B5A7E67A2C84820600069F95 /* LLMViewController.swift in Sources */,
 				B521F2872C7BA9E90019C31B /* ContactTableViewCell.swift in Sources */,
 				B5B212202C7F5B9A00D04D9D /* Contacts.swift in Sources */,
 				B5425C402C77EC7F00C3A983 /* SceneDelegate.swift in Sources */,
@@ -429,6 +445,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5A7E6742C847DBA00069F95 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5A7E6752C847DBA00069F95 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5A7E6742C847DBA00069F95 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5425C322C77EC7F00C3A983 /* Project object */;
 }
