@@ -257,7 +257,8 @@ class DetailViewController: UIViewController {
     
     
     @objc func promptLLM() {
-        
+        let vc = LLMViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 
