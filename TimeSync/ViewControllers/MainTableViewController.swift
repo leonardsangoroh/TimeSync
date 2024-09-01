@@ -42,6 +42,7 @@ class MainTableViewController: UITableViewController,  ContactTableViewCellDeleg
     func configureTableView() {
         tableView.rowHeight = 66
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "Contact")
+        view.backgroundColor = UIColor(named: "background_color")
     }
 
     func fetchContacts() {

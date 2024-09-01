@@ -12,8 +12,8 @@ class NylasService {
     //creates singleton instance of NylasService ensuring only one of its instance is used throughout the app
     static let shared = NylasService()
     
-    private let apiKey = "nyk_v0_uwBDKf5oGvxYiuMbwU4Nv9szBFBhTpSx64RSfUalOcabAEjbt2HwMMxzedQvcbuM"
-    private static let grantID = "1100d579-b94a-408b-94b7-ec53085d46c3"
+    private let apiKey = "nyk_v0_znyMEHcfEJdsQCUwDWeHjjedQX7vqNDCo1lKr5lpDkpaL50GjOImQoDTLE59woCm"
+    private static let grantID = "1c4e4aba-de43-4d14-8ef9-7b1b55b2dcc5"
     private let baseUrl = "https://api.us.nylas.com/v3/grants/\(grantID)/contacts"
     
     //prevents creation of instances outside the singleton pattern
@@ -68,10 +68,11 @@ class NylasService {
             } catch {
                 print("Failed to decode JSON: \(error.localizedDescription)")
                 completion(.failure(error))
-                // for more detail, get the raw data
-//                if let jsonString = String(data: data, encoding: .utf8) {
-//                    print("Raw JSON data: \(jsonString)")
-//                }
+                 //for more detail, get the raw data
+                if let jsonString = String(data: data, encoding: .utf8) {
+                    print("Raw JSON data: \(jsonString)")
+                }
+                
             }
             
             
