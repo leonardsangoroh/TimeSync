@@ -258,6 +258,8 @@ class DetailViewController: UIViewController {
     
     @objc func promptLLM() {
         let vc = LLMViewController()
+        vc.contactName = userName.text
+        vc.currentTime = time.text
         navigationController?.pushViewController(vc, animated: true)
     }
     
