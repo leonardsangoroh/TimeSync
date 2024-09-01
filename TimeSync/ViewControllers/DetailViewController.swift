@@ -45,7 +45,7 @@ class DetailViewController: UIViewController {
         
         view.addSubview(profilePicture)
         profilePicture.translatesAutoresizingMaskIntoConstraints = false
-        profilePicture.image = UIImage(named: "Lee")
+        profilePicture.image = UIImage(named: "empty-contact-image")
         profilePicture.layer.cornerRadius = 75
         profilePicture.clipsToBounds = true
         
