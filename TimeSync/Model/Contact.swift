@@ -23,6 +23,7 @@ struct Contact: Decodable {
     let physicalAddresses: [String]
     //
     let pictureURL: String
+    let surname: String
     let source: String
     let webPages: [String]
     let updatedAt: Int
@@ -41,6 +42,7 @@ struct Contact: Decodable {
         case phoneNumbers = "phone_numbers"
         case physicalAddresses = "physical_addresses"
         case pictureURL = "picture_url"
+        case surname
         case source
         case webPages = "web_pages"
         case updatedAt = "updated_at"
@@ -55,11 +57,11 @@ struct Group: Decodable {
 
 struct Email: Decodable {
     let email: String
-    let type: String
+    //let type: String
 }
 
 
 struct PhoneNumber: Decodable {
     let number: String
-    let type: String
+    let type: String?
 }
