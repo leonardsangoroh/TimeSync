@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>GEMINI_API_KEY</key>
+	<string>AIzaSyC_wS7ixynFbIKFl69ttk792wcCCZQMbQY</string>
 	<key>NYLAS_GRANT_ID</key>
 	<string>1100d579-b94a-408b-94b7-ec53085d46c3</string>
 	<key>NYLAS_API_KEY</key>

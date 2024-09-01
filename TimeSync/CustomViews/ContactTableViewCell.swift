@@ -43,7 +43,7 @@ class ContactTableViewCell: UITableViewCell {
     
     
     func set(contact: Contact) {
-        profilePhoto.image = UIImage(named: "Lee")
+        profilePhoto.image = UIImage(named: "empty-contact-image")
         nameLabel.text = contact.givenName
         
         guard let firstPhoneNumber = contact.phoneNumbers.first?.number else {
