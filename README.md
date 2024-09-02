@@ -3,7 +3,7 @@
 TimeSync is a productivity tool designed to enhance communication among colleagues working remotely or across different time zones. By utilizing the Nylas API for accessing and managing contact information and integrating the Gemini LLM for intelligent decision-making, TimeSync ensures that your messages are sent at the most appropriate and effective times.
 
 ## Features
-
+- **Computed Time Properties**: TimeSync uses your contacts' phone number to determine where your colleague/workmate/friend is located by using the phone-number country-codes. Time Sync then determines your workmates' time, based on the location determined from the phone numbers' country-codes. 
 - **Time-Based Recommendations**: TimeSync analyzes the current time and your colleague's time zone to suggest the most suitable communication method. The red icons are discouraged if I wanted to talk to Maria given her local time, while the green icons are the recommended communication channels if I wanted to talk to Maria given her local time.
 ![Screenshot 2024-09-02 at 02 47 12](https://github.com/user-attachments/assets/80d74f8b-f006-4ade-94c3-3b171e985679)
 
@@ -66,7 +66,7 @@ In today’s globalized work environment, remote teams are often spread across m
 
 ## Project Structure
 
-- **Models:** Contains data models like
+- **Models:** Contains data models.
 - **Views:** Has custom UI components.
 - **View Controllers:** Manages application logic and user interactions.
 - **Resources:** Assets, and other resource files.
